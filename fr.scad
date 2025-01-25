@@ -16,6 +16,7 @@ keycw = 18;
 // keycap height (cherry: 18, choc: 16.5)
 keych = 18;
 size = [1, 1];
+
 supported = [mx, choc_v2];
 housing = [
     max([for(sw=supported)housing(sw).x]),
@@ -26,6 +27,7 @@ stem = min([for(sw=supported)stem(sw)]);
 h = stem + min([for(sw=supported)height(h(sw),2,1,true)-h(sw)+BASE_HEIGHT]);
 // stem diameter
 d = 5.5;
+
 flip = false;
 
 if (flip)
@@ -49,8 +51,8 @@ module main() {
                 rounded_square([x, y, h], r);
         }
         let (
-            x = housing.x,
-            y = housing.y,
+            x = kx*(size.x-1) + housing.x,
+            y = ky*(size.y-1) + housing.y,
             z = h-1.2,
             r = 0.5
         ) {

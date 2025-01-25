@@ -16,6 +16,7 @@ keycw = 18;
 // keycap height (cherry: 18, choc: 16.5)
 keych = 18;
 size = [1, 1];
+
 supported = [mx, choc_v2];
 housing = [
     max([for(sw=supported)housing(sw).x]),
@@ -26,10 +27,13 @@ stem = min([for(sw=supported)stem(sw)]);
 h = stem + min([for(sw=supported)height(h(sw),2,1,true)-h(sw)+BASE_HEIGHT]);
 // stem diameter
 d = 5.5;
+
 scale = max(keycw,keych) / max(BASE_TOP_DIMENSIONS);
 // how should the top lip act
 style_lip = 0; //[0: Regular lip, 1:remove lip subtractively, 2: remove lip and retain height]
 orientation = "down"; // [up: Up, down: Down]
+stackable = false;
+
 flip = false;
 
 if (flip)
@@ -43,11 +47,7 @@ module main() {
         let (
             x = kx*(size.x-1) + keycw,
             y = ky*(size.y-1) + keych,
-            top_dimensions = BASE_TOP_DIMENSIONS,
-            r = max(r_base-(max(
-                top_dimensions.x-((floor(top_dimensions.x/kx)-1)*kx+keycw),
-                top_dimensions.y-((floor(top_dimensions.y/ky)-1)*ky+keych)
-            ))/2, 0)
+            top_dimensions = BASE_TOP_DIMENSIONS
         ) {
             if (orientation == "down")
                 translate([0, 0, h]) mirror([0, 0, 1])
@@ -56,8 +56,8 @@ module main() {
                 gf_bin();
         }
         let (
-            x = housing.x,
-            y = housing.y,
+            x = kx*(size.x-1) + housing.x,
+            y = ky*(size.y-1) + housing.y,
             z = orientation == "up" ? stem : h-1.2,
             r = 0.5
         ) {
@@ -67,13 +67,14 @@ module main() {
     }
     render() difference() {
         stem(stem, stem, d);
-        cylinder(h = STACKING_LIP_SIZE.y*scale, d = d);
+        if (orientation != "up" && style_lip != 2 && stackable)
+            cylinder(h = STACKING_LIP_SIZE.y*scale, d = d);
     }
 }
 
 module gf_bin() {
     scale(scale) {
-        gridfinityInit(gx = size.x, gy = size.y, h = h/scale-BASE_HEIGHT-STACKING_LIP_SIZE.y, sl = style_lip);
+        gridfinityInit(gx = size.x, gy = size.y, h = hf(h/scale-BASE_HEIGHT-STACKING_LIP_SIZE.y,2,style_lip),sl=style_lip);
         gridfinityBase(grid_size = [size.x, size.y]);
     }
 }
