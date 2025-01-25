@@ -1,6 +1,6 @@
 # Keycaps
 
-FR and GF profile keycaps are designed to fit in [https://github.com/dennisleexyz/gridfinity-keyboard-parts](gridfinity-keyswitch-bins) when attached to a switch. Select which switches to target and the cap dimensions will update. For example, selecting
+FR and GF profile keycaps are designed to fit in [gridfinity-keyswitch-bins](https://github.com/dennisleexyz/gridfinity-keyboard-parts) when attached to a switch. Select which switches to target and the cap dimensions will update. For example, selecting
 
 ```openscad
 supported = [mx, choc_v2];
