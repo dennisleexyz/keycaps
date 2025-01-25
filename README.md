@@ -66,8 +66,7 @@ The stem can be shortened for stackability, but this was found to make them pron
 stackable = true;
 ```
 
-| ![](docs/images/gf-stackable.png) | ![](docs/images/gf-stackable-flip.png) |
-|-----------------------------------|----------------------------------------|
+![](docs/images/gf-stackable.png)
 
 Down-facing caps can be printed flat, but not up-facing ones unless the stacking lip is removed.
 
