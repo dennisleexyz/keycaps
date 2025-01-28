@@ -22,6 +22,22 @@ keych = 18;
 size = [1, 1];
 ```
 
+Tolerance requirement changes between materials, printer, etc. Here's some values found to work well:
+
+- Bambu Lab P1S
+- 0.4 mm Stainless Steel Nozzle
+- Bambu Textured PEI Plate
+
+| Filament                   | Tol |
+|----------------------------|-----|
+| Overture Matte PLA White   | 0   |
+| Bambu Lab PLA Basic Orange | 0   |
+| 3D BEST-Q PCTG Clear       | 0.1 |
+ 
+The earlier tests were conducted with PCTG. After switching to PLA the seam became visible. I noticed OrcaSlicer's Scarf joint seam (beta) option and looked it up. After applying settings from [this guide](https://www.printables.com/model/783313-better-seams-an-orca-slicer-guide-to-using-scarf-s), seams almost vanished. However, I switched from 3 back to 2 Wall loops to stop my OrcaSlicer from crashing every time I sliced. I also restored all of the Line width settings back to Bambu's presets and went back to the Classic Wall generator when seams on three out of the four center corners of the stem cross caused caps to sit skewed. You might also like to make surface lines vertical (change the Infill direction to 90°) to be parallel to the direction of finger travel.
+
+Out of all options in OrcaSlicer, setting Top surface pattern, Bottom surface pattern, Sparse infill pattern, and Internal solid infill pattern to Hilbert Curve yielded the best clarity with transparent filament.
+
 TODO: currently the skirt height is set to the stem height, it should be changed to the switch's top housing height.
 
 TODO: stabilizers are not yet supported.
@@ -33,12 +49,16 @@ The stem on MX switches is 1.1mm thick horizontally and 1.3mm thick vertically. 
 
 A 5.5mm diameter stem was found to fit Outemu GTMX and Kailh BOX/Choc v2 switches. It should also fit Gateron KS-33 Low Profile switches (untested; based on datasheet).
 
+TODO: Kailh Choc v1/Mini, Gateron KS-27 Low Profile stems are not yet supported.
+
 ```openscad
 // stem diameter
 d = 5.5;
 ```
 
 ## FR (Flat Rectangular) Profile
+
+This is a geometrically simple profile. It aims to provide a nice big flat top surface for legends (which could be multi-material 3D printed). To save time/material and allow (with clear 3D printing) decent optical clarity for seeing the switch underneath, the tops are thin, but not so thin that JLC3DP complains. There is room to make it thicker for a weightier (by about 25%) keycap.
 
 The corner radius is concentric with the outside radius of the gridfinity-keyswitch-bins.
 
