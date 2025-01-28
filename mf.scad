@@ -7,14 +7,16 @@ $fs = 0.25; // .01
 //$fa = 0.01;
 //$fs = 0.01; // .01
 
+scale = 0.42;
+
 // spacing between key centers (X-axis)
 kx = U;
 // spacing between key centers (Y-axis)
 ky = U;
 // keycap width (cherry: 18, choc: 17.5)
-keycw = 18;
+keycw = BASE_TOP_DIMENSIONS.x*scale;
 // keycap height (cherry: 18, choc: 16.5)
-keych = 18;
+keych = BASE_TOP_DIMENSIONS.y*scale;
 size = [1, 1];
 
 supported = [mx, choc_v2];
@@ -27,8 +29,6 @@ stem = min([for(sw=supported)stem(sw)]);
 h = stem + min([for(sw=supported)height(h(sw),2,1,true)-h(sw)+BASE_HEIGHT]);
 // stem diameter
 d = 5.5;
-
-scale = max(keycw,keych) / max(BASE_TOP_DIMENSIONS);
 // how should the top lip act
 style_lip = 0; //[0: Regular lip, 1:remove lip subtractively, 2: remove lip and retain height]
 orientation = "down"; // [up: Up, down: Down]
@@ -51,9 +51,9 @@ module main() {
         ) {
             if (orientation == "down")
                 translate([0, 0, h]) mirror([0, 0, 1])
-                     gf_bin();
+                     mf_bin();
             else
-                gf_bin();
+                mf_bin();
         }
         let (
             x = kx*(size.x-1) + housing.x,
@@ -72,7 +72,7 @@ module main() {
     }
 }
 
-module gf_bin() {
+module mf_bin() {
     scale(scale) {
         gridfinityInit(gx = size.x, gy = size.y, h = hf(h/scale-BASE_HEIGHT-STACKING_LIP_SIZE.y,2,style_lip),sl=style_lip);
         gridfinityBase(grid_size = [size.x, size.y]);

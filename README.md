@@ -1,6 +1,6 @@
 # Keycaps
 
-FR and GF profile keycaps are designed to fit in [gridfinity-keyswitch-bins](https://github.com/dennisleexyz/gridfinity-keyboard-parts) when attached to a switch. Select which switches to target and the cap dimensions will update. For example, selecting
+FR and MF profile keycaps are designed to fit in [gridfinity-keyswitch-bins](https://github.com/dennisleexyz/gridfinity-keyboard-parts) when attached to a switch. Select which switches to target and the cap dimensions will update. For example, selecting
 
 ```openscad
 supported = [mx, choc_v2];
@@ -62,13 +62,13 @@ This is a geometrically simple profile. It aims to provide a nice big flat top s
 
 The corner radius is concentric with the outside radius of the gridfinity-keyswitch-bins.
 
-## GF (Gridfinity) Profile
+## MF (Minifinity) Profile
 
-Scaled-down version of a real Gridfinity bin! Generated using the excellent [gridfinity-rebuilt-openscad](https://github.com/kennetek/gridfinity-rebuilt-openscad/) by kennetek.
+A real Gridfinity bin scaled-down to the same size as Machenna56k's Minifinity! Generated using the excellent [gridfinity-rebuilt-openscad](https://github.com/kennetek/gridfinity-rebuilt-openscad/) by kennetek.
 
 The bin can be set to face up (stem on the bottom side)
 
-| ![](docs/images/gf-up.png) | ![](docs/images/gf-up-flip.png) |
+| ![](docs/images/mf-up.png) | ![](docs/images/mf-up-flip.png) |
 |----------------------------|---------------------------------|
 
 or down (stem on the top side).
@@ -77,7 +77,7 @@ or down (stem on the top side).
 orientation = "up"; // [up: Up, down: Down]
 ```
 
-| ![](docs/images/gf.png) | ![](docs/images/gf-flip.png) |
+| ![](docs/images/mf.png) | ![](docs/images/mf-flip.png) |
 |-------------------------|------------------------------|
 
 The stem can be shortened for stackability, but this was found to make them prone to falling off.
@@ -86,7 +86,7 @@ The stem can be shortened for stackability, but this was found to make them pron
 stackable = true;
 ```
 
-![](docs/images/gf-stackable-flip.png)
+![](docs/images/mf-stackable-flip.png)
 
 Down-facing caps can be printed flat, but not up-facing ones unless the stacking lip is removed.
 
@@ -95,19 +95,19 @@ Down-facing caps can be printed flat, but not up-facing ones unless the stacking
 style_lip = 2; //[0: Regular lip, 1:remove lip subtractively, 2: remove lip and retain height]
 ```
 
-| ![](docs/images/gf-up-nolip.png) | ![](docs/images/gf-up-nolip-flip.png) |
+| ![](docs/images/mf-up-nolip.png) | ![](docs/images/mf-up-nolip-flip.png) |
 |----------------------------------|---------------------------------------|
 
 TODO: multi-width caps (bigger than 1×1) are not yet supported. There's a 1-1.05mm gap between keycaps, but a 0.5mm gap between Gridfinity bins, which gets even smaller after scaling it down to less than half of its original dimensions. I tried changing the `scale` and the library's `BASE_TOP_DIMENSIONS` but was unsuccessful in getting things to behave in the desired manner.
 
 Additionally, when facing down, the caps are too short to provide a deep enough cutout for switch's top housing clearance without cutting into the bases and leaving holes between them.
 
-| ![](docs/images/gf-3x1.png) | ![](docs/images/gf-3x1-flip.png) |
+| ![](docs/images/mf-3x1.png) | ![](docs/images/mf-3x1-flip.png) |
 |-----------------------------|----------------------------------|
 
 For even numbers of bases, when facing up, the stem will be in the middle and interfere with stacking.
 
-![](docs/images/gf-2x1-flip.png)
+![](docs/images/mf-2x1-flip.png)
 
 ## License
 
