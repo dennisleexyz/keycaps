@@ -63,7 +63,7 @@ module main() {
         }
     }
     render() difference() {
-        stem(stem, stem, d);
+        stem(orientation == "up" ? h-scale*STACKING_LIP_SIZE.y : h, stem, d);
         if (orientation != "up" && style_lip != 2 && stackable)
             cylinder(h = STACKING_LIP_SIZE.y*scale, d = d);
     }
