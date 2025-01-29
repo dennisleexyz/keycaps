@@ -3,13 +3,15 @@ IMG=docs/images
 all:
 	openscad fr.scad --render -D'$$fa=0.01' -D'size=[2,1]' -qo $(IMG)/fr-2u.png
 	openscad fr.scad --render -D'$$fa=0.01' -D'size=[2,1]' -D'flip=true' -qo $(IMG)/fr-2u-flip.png
-	openscad mf.scad --render -D'$$fa=0.01' -qo $(IMG)/mf.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'flip=true' -qo $(IMG)/mf-flip.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'stackable=true' -D'flip=true' -qo $(IMG)/mf-stackable-flip.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'orientation="up"' --render -qo $(IMG)/mf-up.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'orientation="up"' -D'flip=true' --render -qo $(IMG)/mf-up-flip.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'orientation="up"' -D'style_lip=2' --render -qo $(IMG)/mf-up-nolip.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'orientation="up"' -D'style_lip=2' -D'flip=true' --render -qo $(IMG)/mf-up-nolip-flip.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'size=[3,1]' --render -qo $(IMG)/mf-3x1.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'size=[3,1]' -D'flip=true' --render -qo $(IMG)/mf-3x1-flip.png
-	openscad mf.scad --render -D'$$fa=0.01' -D'orientation="up"' -D'size=[2,1]' -D'flip=true' --render -qo $(IMG)/mf-2x1-flip.png
+	openscad gf.scad --render -D'$$fa=0.01' -D'angle=45' -qo $(IMG)/gf-45.png
+	openscad gf.scad --render -D'$$fa=0.01' -D'angle=90' -qo $(IMG)/gf-90.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'angle=45' -qo $(IMG)/mf-45.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'angle=90' -qo $(IMG)/mf-90.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'orientation="down"' -qo $(IMG)/mf-down.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'orientation="down"' -D'stackable=true' -D'angle=180' -qo $(IMG)/mf-down-stackable-180.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'orientation="down"' -D'angle=180' -qo $(IMG)/mf-down-bad.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'style_lip=2' -qo $(IMG)/mf-nolip.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'style_lip=2' -D'angle=180' -qo $(IMG)/mf-nolip-180.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'size=[3,1]' -D'orientation="down"' -qo $(IMG)/mf-3x1-down.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'size=[3,1]' -D'orientation="down"' -D'angle=180' -qo $(IMG)/mf-3x1-down-180.png
+	openscad mf.scad --render -D'$$fa=0.01' -D'size=[2,1]' -D'angle=180' -qo $(IMG)/mf-2x1-180.png

@@ -31,15 +31,12 @@ h = stem + min([for(sw=supported)height(h(sw),2,1,true)-h(sw)+BASE_HEIGHT]);
 d = 5.5;
 // how should the top lip act
 style_lip = 0; //[0: Regular lip, 1:remove lip subtractively, 2: remove lip and retain height]
-orientation = "down"; // [up: Up, down: Down]
+orientation = "up"; // [up: Up, down: Down]
 stackable = false;
 
-flip = false;
+angle = 0; // [0:45:180]
 
-if (flip)
-    mirror([0, 0, 1])
-        main();
-else
+rotate([angle, 0, 0])
     main();
 
 module main() {
