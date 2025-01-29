@@ -53,8 +53,8 @@ module main() {
                 mf_bin();
         }
         let (
-            x = kx*(size.x-1) + housing.x,
-            y = ky*(size.y-1) + housing.y,
+            x = kx*(size.x-1) + scale*base_bottom_dimensions().x,
+            y = ky*(size.y-1) + scale*base_bottom_dimensions().y,
             z = orientation == "up" ? stem : h-1.2,
             r = 0.5
         ) {
