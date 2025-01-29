@@ -47,7 +47,7 @@ TODO: currently the skirt height is set to the stem height, it should be changed
 
 The stem on MX switches is 1.1mm thick horizontally and 1.3mm thick vertically. These keycaps are generated with symmetric stems, considering that the rest of the profile is symmetric. During testing, this was not found to cause fitment issues. Also, Choc v2 stems are symmetric, according to their datasheet. TODO: add the option for asymmetric stems, particularly for non-square caps.
 
-A 5.5mm diameter stem was found to fit Outemu GTMX and Kailh BOX/Choc v2 switches. It should also fit Gateron KS-33 Low Profile switches (untested; based on datasheet).
+A 5.5mm diameter stem was found to fit Outemu GTMX, Kailh BOX/Choc v2, and Gateron KS-33 Low Profile switches.
 
 TODO: Kailh Choc v1/Mini, Gateron KS-27 Low Profile stems are not yet supported.
 
