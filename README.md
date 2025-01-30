@@ -35,8 +35,8 @@ Stem tolerance requirement changes between materials, printer, etc. Here's some 
 
 | Filament                   | `Tol` (flat) | `Tol` (rotated) |
 |----------------------------|--------------|-----------------|
-| Overture Matte PLA White   | 0            | 0.1             |
-| Bambu Lab PLA Basic Orange | 0            |                 |
+| Overture Matte PLA White   | 0.05         | 0.1             |
+| Bambu Lab PLA Basic Orange | 0.05         |                 |
 | 3D BEST-Q PCTG Clear       | 0.1          |                 |
  
 The earlier tests were conducted with PCTG. After switching to PLA the seam became visible. I noticed OrcaSlicer's Scarf joint seam (beta) option and looked it up. After applying settings from [this guide](https://www.printables.com/model/783313-better-seams-an-orca-slicer-guide-to-using-scarf-s), seams almost vanished. However, I switched from 3 back to 2 Wall loops to stop my OrcaSlicer from crashing every time I sliced. I also restored all of the Line width settings back to Bambu's presets and went back to the Classic Wall generator when seams on three out of the four center corners of the stem cross caused caps to sit skewed. You might also like to make surface lines vertical (change the Infill direction to 90°) to be parallel to the direction of finger travel.
@@ -82,7 +82,7 @@ These are generated using the excellent [gridfinity-rebuilt-openscad](https://gi
 - GF: full-size Gridfinity (half-base bins for a 21×21mm spacing).
 - MF: Gridfinity bin at 42% scale, the same size as Machenna56k's Minifinity.
 
-Print these flat with the stem facing up (reduce stem tolerance) or rotated standing up at 45°/90° (increase stem tolerance).
+Print these flat with the stem facing up (reduce stem tolerance) with normal(auto) Snug support or rotated standing up at 45°/90° (increase stem tolerance).
 
 | ![](docs/images/gf-45.png) | ![](docs/images/gf-90.png) | ![](docs/images/mf-45.png) | ![](docs/images/mf-90.png) |
 |----------------------------|----------------------------|----------------------------|----------------------------|
@@ -109,7 +109,7 @@ orientation = "down"; // [up: Up, down: Down]
 | ![](docs/images/mf-down.png) | ![](docs/images/mf-down-bad.png) |
 |------------------------------|----------------------------------|
 
-The stem can be shortened for stackability, but this was found to make them prone to falling off.
+The stem can be shortened for stackability, but this can sometimes make them prone to falling off.
 
 ```openscad
 stackable = true;
