@@ -69,13 +69,13 @@ These external libraries are required:
 The file paths are set up to work with libraries in either this folder or [OpenSCAD library path](https://
 en.wikibooks.org/wiki/OpenSCAD_User_Manual/Libraries).
 
-## FR (Flat Rectangular) Profile
+## FR (Flat Rectangular) Profile Keycaps
 
 This is a geometrically simple profile. It aims to provide a nice big flat top surface for legends (which could be multi-material 3D printed). To save time/material and allow (with clear 3D printing) decent optical clarity for seeing the switch underneath, the tops are thin, but not so thin that JLC3DP complains. There is room to make it thicker for a weightier (by about 25%) keycap.
 
-The corner radius is concentric with the outside radius of the gridfinity-keyswitch-bins.
+The corner radius is concentric with the outside radius of the [gridfinity-keyswitch-bins](https://github.com/dennisleexyz/gridfinity-keyboard-parts).
 
-## GF (Gridfinity) and MF (Minifinity) Profiles
+## GF (Gridfinity) and MF (Minifinity) Profile Keycaps
  
 These are generated using the excellent [gridfinity-rebuilt-openscad](https://github.com/kennetek/gridfinity-rebuilt-openscad/) by kennetek.
 

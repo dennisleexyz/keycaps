@@ -1,6 +1,12 @@
 IMG=docs/images
 
-all:
+stl:
+	openscad fr.scad -D'angle=180' -qo fr.stl
+	openscad gf.scad -D'angle=180' -qo gf.stl
+	openscad mf.scad -D'angle=180' -qo mf.stl
+
+
+png:
 	openscad fr.scad --render -D'$$fa=0.01' -D'size=[2,1]' -qo $(IMG)/fr-2u.png
 	openscad fr.scad --render -D'$$fa=0.01' -D'size=[2,1]' -D'flip=true' -qo $(IMG)/fr-2u-flip.png
 	openscad gf.scad --render -D'$$fa=0.01' -D'angle=45' -qo $(IMG)/gf-45.png
